@@ -1,0 +1,47 @@
+﻿@page "{handler?}"
+@model Playground.Pages.SwitchModel
+
+
+
+<div asp-validation-summary="All" class="alert-danger text-center" style="width:50%; margin:auto;" ></div>
+<div class="d-flex flex-row justify-content-between p-2 bg-light">
+   
+
+   
+    <div class="card">
+        <h3 class="card-header">Chess Players</h3>
+    <div class="card-body">
+        <h5 class="card-title">Players</h5>
+        <ul class="list-group">
+                @foreach(var item in Model.AllPlayers.Where(p => p.IsAPlayer))
+                {
+                    <li class="list-group-item">@item.Name | <a asp-page-handler="Move" asp-route-id="@item.Id" class="text-decoration-none">Move</a></li>
+                }
+
+        </ul>
+    </div>
+    </div>
+    <div class="card">
+        <h3 class="card-header">Data Entry Form</h3>
+    <div class="card-body">
+        <form method="post">
+            <input asp-for="Player.Name" />
+            <label for="check">Game</label>
+            <input asp-for="Player.IsAPlayer" id="check" />
+            <button asp-page-handler="add" type="submit" class="btn btn-secondary">Add</button>
+        </form>
+    </div>
+    </div>
+    <div class="card">
+        <h3 class="card-header">Non-Chess Players</h3>
+    <div class="card-body">
+        <h5 class="card-title">Players</h5>
+        <ul class="list-group">
+            @foreach(var item in Model.AllPlayers.Where(p => !p.IsAPlayer))
+                {
+                    <li class="list-group-item">@item.Name | <a asp-page-handler="Move" asp-route-id="@item.Id" class="text-decoration-none">Move</a></li>
+                }
+        </ul>
+    </div>
+    </div>
+</div>

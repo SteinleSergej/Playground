@@ -11,5 +11,6 @@ namespace Playground.Data
 
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Player> Players { get; set; }
     }
 }
