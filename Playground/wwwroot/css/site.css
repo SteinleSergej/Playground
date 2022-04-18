@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#playground-projects img{
+    max-height: 10rem;
+}

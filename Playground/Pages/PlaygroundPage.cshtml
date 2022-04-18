@@ -1,0 +1,39 @@
+﻿@page "{handler?}"
+@model Playground.Pages.PlaygroundPageModel
+
+
+
+
+<div class="container d-flex flex-row justify-content-around mt-5" id="playground-projects">
+    <div class="d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+                <img src="~/images/customer.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Customer Project</h5>
+                <p class="card-text">hinzufügen | bearbeiten | lösche von Daten</p>
+                <a asp-page="/Customer" class="btn btn-primary mt-4">Customer</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+                <img src="~/images/switch.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+                <img src="~/images/lab.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary disabled">Go somewhere</a>
+            </div>
+        </div>  
+    </div>
+ 
+</div>
