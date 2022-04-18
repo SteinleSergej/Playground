@@ -13,7 +13,7 @@ namespace Playground.Model
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd-MMM-yyyy}")]
-        public string DoB { get; set; }
+        public DateTime DoB { get; set; }
 
         [Required]
         public string City { get; set; }

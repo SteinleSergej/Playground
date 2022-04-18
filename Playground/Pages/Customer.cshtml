@@ -2,3 +2,45 @@
 @model Playground.Pages.CustomerModel
 @{
 }
+
+<div class="container">
+
+   
+    <div class="card">
+        <div class="card-header">
+            <p class="fs-1 text-uppercase">Customers</p>
+        <div class="text-center">
+            <a asp-route-num="-1" class="@(Playground.Pages.CustomerModel.PAGE > 1 ?" btn btn-secondary ":"btn btn-secondary disabled ")">Prev << </a>
+            <a asp-route-num="1" class="@(Playground.Pages.CustomerModel.PAGE < Model.NumOfPages ?"  btn btn-success ":"btn btn-success disabled ")">Next >></a>
+        </div>
+        </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col">City</th>
+                </tr> 
+            </thead>
+            <tbody>
+                    @foreach(var customer in Model.Customers)
+                    {
+                        <tr>
+                            <td>@customer.FirstName</td>
+                            <td>@customer.LastName</td>
+                            <td>@customer.DoB.ToString("dd/MMMM/yyyy")</td>
+                            <td>@customer.City</td>
+                        </tr>
+                    }
+                </tbody>
+        </table>
+        <div>
+            <a asp-page-handler="seed" class="btn btn-success px-3">Seed</a>
+            <a asp-page-handler="delete" class="btn btn-danger px-3">Delete</a>
+        </div>
+    </div>
+</div>
+
+</div>
